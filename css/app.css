@@ -1,0 +1,127 @@
+/* Custom color theme properties */
+:root {
+  --f7-theme-color: #075e54;
+  --f7-theme-color-rgb: 30, 190, 165;
+  --f7-theme-color-shade: #064e45;
+  --f7-theme-color-tint: #13756a;
+}
+
+/* Invert navigation bars to fill style */
+:root,
+:root.theme-dark,
+:root .theme-dark {
+  --f7-bars-bg-color: #075e54;
+  --f7-bars-bg-color-rgb: var(--f7-theme-color-rgb);
+  --f7-bars-translucent-opacity: 0.9;
+  --f7-bars-text-color: #fff;
+  --f7-bars-link-color: #fff;
+  --f7-navbar-subtitle-text-color: rgba(255,255,255,0.85);
+  --f7-bars-border-color: transparent;
+  --f7-tabbar-link-active-color: #fff;
+  --f7-tabbar-link-inactive-color: rgba(255,255,255,0.54);
+  --f7-sheet-border-color: transparent;
+  --f7-tabbar-link-active-border-color: #fff;
+}
+.appbar,
+.navbar,
+.toolbar,
+.subnavbar,
+.calendar-header,
+.calendar-footer {
+  --f7-touch-ripple-color: var(--f7-touch-ripple-white);
+  --f7-link-highlight-color: var(--f7-link-highlight-white);
+  --f7-button-text-color: #fff;
+  --f7-button-pressed-bg-color: rgba(255,255,255,0.1);
+}
+.navbar-large-transparent,
+.navbar-large.navbar-transparent {
+  --f7-navbar-large-title-text-color: #000;
+
+  --r: 30;
+  --g: 190;
+  --b: 165;
+  --progress: var(--f7-navbar-large-collapse-progress);
+  --f7-bars-link-color: rgb(
+    calc(var(--r) + (255 - var(--r)) * var(--progress)),
+    calc(var(--g) + (255 - var(--g)) * var(--progress)),
+    calc(var(--b) + (255 - var(--b)) * var(--progress))
+  );
+}
+.theme-dark .navbar-large-transparent,
+.theme-dark .navbar-large.navbar-transparent {
+  --f7-navbar-large-title-text-color: #fff;
+}
+
+/* Your app custom styles here */
+:root {
+  --f7-sheet-height: 260px;
+  --f7-sheet-border-color: transparent;
+  --f7-sheet-transition-duration: 300ms;
+  --f7-sheet-push-border-radius: 10px;
+  --f7-sheet-push-offset: var(--f7-safe-area-top);
+  --f7-sheet-bg-color: #fff;
+}
+:root .theme-dark,
+:root.theme-dark {
+  --f7-sheet-bg-color: #202020;
+}
+.ios {
+  --f7-sheet-border-color: var(--f7-bars-border-color);
+}
+/* Demo Popup & Sheet Swipe To Close */
+.demo-popup-swipe-handler {
+  --f7-popup-border-radius: 15px 15px 0 0;
+  --f7-popup-tablet-border-radius: 15px;
+  --f7-block-strong-border-color: transparent;
+  height: calc(100% - var(--f7-navbar-height) - var(--f7-safe-area-top));
+  top: calc(var(--f7-navbar-height) + var(--f7-safe-area-top))
+}
+.demo-popup-swipe-handler .swipe-handler {
+  background: var(--f7-page-bg-color);
+}
+.demo-popup-swipe-handler .page-content {
+  padding-top: 16px;
+}
+.demo-sheet-swipe-to-close,
+.demo-sheet-swipe-to-step {
+  --f7-sheet-border-color: transparent;
+  border-radius: 15px 15px 0 0;
+  overflow: hidden;
+}
+.demo-sheet-swipe-to-close .swipe-handler,
+.demo-sheet-swipe-to-step .swipe-handler {
+  background: none;
+}
+.swipe-handler {
+  height: 16px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 0;
+  background: #fff;
+  cursor: pointer;
+  z-index: 10;
+}
+.swipe-handler:after {
+  content: '';
+  width: 36px;
+  height: 6px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -18px;
+  margin-top: -3px;
+  border-radius: 3px;
+  background: #666;
+}
+
+.page-home,
+.page-about {
+  --f7-list-border-color: transparent;
+  --f7-block-strong-border-color: transparent;
+  --f7-block-font-size: 16px;
+}
+:root:not(.theme-dark) .page-home,
+:root:not(.theme-dark) .page-about {
+  --f7-page-bg-color: #fff;
+}
