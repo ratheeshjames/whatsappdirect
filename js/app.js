@@ -20,14 +20,13 @@ var app = new Framework7({
 
   // App routes
   routes: routes,
-  // Register service worker
-  serviceWorker: {
+  // Register service worker (optional)
+  /*serviceWorker: {
     path: "/service-worker.js",
-  },
+  },*/
   on: {
     // each object key means same name event handler
-    pageInit: function (page) {         
-           
+    pageInit: function (page) {
       var self = this;
       // do something on page init
       // Create PWA sheet
@@ -60,36 +59,39 @@ $$("#btnSent").on("click", function (e) {
   console.log("URL : " + url);
   window.open(url, "_top");
 });
+/*
 let deferredPrompt;
-      window.addEventListener('beforeinstallprompt', (e) =>{
-        e.preventDefault();
-        deferredPrompt = e;
-        setTimeout(function () {                
-          $$("#dummyBtn").trigger("click");
-      }, 1000); 
-      $$('#installBtn').on('click', function (e) {
-        $$(".pwa-sheet-swipe-to-close").hide();
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then((choiceResult) => {
-          if(choiceResult.outcome == 'accepted'){
-            console.log('User accepted the A2HS prompt');
-          }else {
-            console.log('User dismissed the A2HS prompt');
-          }
-          deferredPrompt = null;
-        });
-    });
-      });  
-      window.addEventListener('load', e => {    
-        registerSW();
-      });
-      async function registerSW() { 
-        if ('serviceWorker' in navigator) { (2)
-          try {
-            await navigator.serviceWorker.register('./service-worker.js'); 
-          } catch (e) {
-            alert('ServiceWorker registration failed. Sorry about that.'); 
-          }
-        } else {          
-        }
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  setTimeout(function () {
+    $$("#dummyBtn").trigger("click");
+  }, 1000);
+  $$("#installBtn").on("click", function (e) {
+    $$(".pwa-sheet-swipe-to-close").hide();
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome == "accepted") {
+        console.log("User accepted the A2HS prompt");
+      } else {
+        console.log("User dismissed the A2HS prompt");
       }
+      deferredPrompt = null;
+    });
+  });
+});
+*/
+
+window.addEventListener("load", (e) => {
+  registerSW();
+});
+async function registerSW() {
+  if ("serviceWorker" in navigator) {    
+    try {
+      await navigator.serviceWorker.register("/service-worker.js");
+    } catch (e) {
+      alert("ServiceWorker registration failed. Sorry about that.");
+    }
+  } else {
+  }
+}
