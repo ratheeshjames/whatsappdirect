@@ -1,5 +1,5 @@
 var $$ = Dom7;
-let deferredPrompt;
+/*let deferredPrompt;
       window.addEventListener('beforeinstallprompt', (e) =>{
         e.preventDefault();
         deferredPrompt = e;
@@ -18,7 +18,7 @@ let deferredPrompt;
           deferredPrompt = null;
         });
     });
-      });  
+      });  */
 var app = new Framework7({
   root: "#app", // App root element
 
