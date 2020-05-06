@@ -69,7 +69,7 @@
   --f7-sheet-border-color: var(--f7-bars-border-color);
 }
 /* Demo Popup & Sheet Swipe To Close */
-.demo-popup-swipe-handler {
+.demo-popup-swipe-handler  {
   --f7-popup-border-radius: 15px 15px 0 0;
   --f7-popup-tablet-border-radius: 15px;
   --f7-block-strong-border-color: transparent;
@@ -90,6 +90,29 @@
 }
 .demo-sheet-swipe-to-close .swipe-handler,
 .demo-sheet-swipe-to-step .swipe-handler {
+  background: none;
+}
+.pwa-popup-swipe-handler  {
+  --f7-popup-border-radius: 15px 15px 0 0;
+  --f7-popup-tablet-border-radius: 15px;
+  --f7-block-strong-border-color: transparent;
+  height: calc(100% - var(--f7-navbar-height) - var(--f7-safe-area-top));
+  top: calc(var(--f7-navbar-height) + var(--f7-safe-area-top))
+}
+.pwa-popup-swipe-handler .swipe-handler {
+  background: var(--f7-page-bg-color);
+}
+.pwa-popup-swipe-handler .page-content {
+  padding-top: 16px;
+}
+.pwa-sheet-swipe-to-close,
+.pwa-sheet-swipe-to-step {
+  --f7-sheet-border-color: transparent;
+  border-radius: 15px 15px 0 0;
+  overflow: hidden;
+}
+.pwa-sheet-swipe-to-close .swipe-handler,
+.pwa-sheet-swipe-to-step .swipe-handler {
   background: none;
 }
 .swipe-handler {

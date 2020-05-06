@@ -48,7 +48,7 @@
             </div>
             <div class="right">
               <a class="link sheet-open" data-sheet=".demo-sheet-swipe-to-close">
-                <i class="icon f7-icons" >question_circle</i>                
+                <i class="icon f7-icons">question_circle</i>
               </a>
             </div>
           </div>
@@ -325,6 +325,8 @@
           <div class="block">
             <button class="col button button-large button-fill button-raised" id="btnSent">SEND</button>
           </div>
+          <button class="button col sheet-open" data-sheet=".pwa-sheet-swipe-to-close" id="dummyBtn"
+            style="display: none;">Install App</button>
         </div>
         <div class="sheet-modal demo-sheet-swipe-to-close" style="height:auto">
           <div class="sheet-modal-inner">
@@ -343,6 +345,21 @@
                     (You can even sent messages to Yourself!!!)
                 </div>
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sheet-modal pwa-sheet-swipe-to-close" style="height:auto">
+          <div class="sheet-modal-inner">
+            <div class="swipe-handler"></div>
+            <div class="page-content">
+              <div class="block-title block-title-large">Install</div>
+              <div class="block">
+                <p>Click the install button below to install</p>
+                <!-- Block Title -->
+                <div class="block">
+                  <button class="col button button-fill" id="installBtn">INSTALL</button>
+                </div>
               </div>
             </div>
           </div>
