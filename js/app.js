@@ -59,7 +59,6 @@ $$("#btnSent").on("click", function (e) {
   console.log("URL : " + url);
   window.open(url, "_top");
 });
-/*
 let deferredPrompt;
 window.addEventListener("beforeinstallprompt", (e) => {
   e.preventDefault();
@@ -80,7 +79,6 @@ window.addEventListener("beforeinstallprompt", (e) => {
     });
   });
 });
-*/
 
 window.addEventListener("load", (e) => {
   registerSW();
