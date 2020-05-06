@@ -22,7 +22,7 @@ var app = new Framework7({
   routes: routes,
   // Register service worker (optional)
   serviceWorker: {
-    path: "/service-worker.js",
+    path: "service-worker.js",
   },
   on: {
     // each object key means same name event handler
@@ -88,7 +88,7 @@ window.addEventListener("load", (e) => {
 async function registerSW() {
   if ("serviceWorker" in navigator) {    
     try {
-      await navigator.serviceWorker.register("/service-worker.js");
+      await navigator.serviceWorker.register("service-worker.js");
     } catch (e) {
       alert("ServiceWorker registration failed. Sorry about that.");
     }
