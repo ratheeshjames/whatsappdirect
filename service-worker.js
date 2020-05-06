@@ -5,6 +5,13 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.0.0/workbox
   Precache Manifest
   Change revision as soon as file content changed
 */
+self.addEventListener('install', async event => {
+  console.log('install event')
+});
+
+self.addEventListener('fetch', async event => {
+  console.log('fetch event')
+});
 self.__WB_MANIFEST = [
   {
     revision: '1',
