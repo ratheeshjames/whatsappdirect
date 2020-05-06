@@ -1,24 +1,4 @@
 var $$ = Dom7;
-/*let deferredPrompt;
-      window.addEventListener('beforeinstallprompt', (e) =>{
-        e.preventDefault();
-        deferredPrompt = e;
-        setTimeout(function () {                
-          $$("#dummyBtn").trigger("click");
-      }, 1000); 
-      $$('#installBtn').on('click', function (e) {
-        $$(".pwa-sheet-swipe-to-close").hide();
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then((choiceResult) => {
-          if(choiceResult.outcome == 'accepted'){
-            console.log('User accepted the A2HS prompt');
-          }else {
-            console.log('User dismissed the A2HS prompt');
-          }
-          deferredPrompt = null;
-        });
-    });
-      });  */
 var app = new Framework7({
   root: "#app", // App root element
 
@@ -80,3 +60,23 @@ $$("#btnSent").on("click", function (e) {
   console.log("URL : " + url);
   window.open(url, "_top");
 });
+let deferredPrompt;
+      window.addEventListener('beforeinstallprompt', (e) =>{
+        e.preventDefault();
+        deferredPrompt = e;
+        setTimeout(function () {                
+          $$("#dummyBtn").trigger("click");
+      }, 1000); 
+      $$('#installBtn').on('click', function (e) {
+        $$(".pwa-sheet-swipe-to-close").hide();
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if(choiceResult.outcome == 'accepted'){
+            console.log('User accepted the A2HS prompt');
+          }else {
+            console.log('User dismissed the A2HS prompt');
+          }
+          deferredPrompt = null;
+        });
+    });
+      });  
