@@ -21,9 +21,9 @@ var app = new Framework7({
   // App routes
   routes: routes,
   // Register service worker (optional)
-  /*serviceWorker: {
+  serviceWorker: {
     path: "/service-worker.js",
-  },*/
+  },
   on: {
     // each object key means same name event handler
     pageInit: function (page) {
